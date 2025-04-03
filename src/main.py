@@ -1,7 +1,7 @@
 from pytube import YouTube 
 import sys
 import os,re
-print(sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from utilties.mp3_to_web_converter import wav_converter
 from utilties.trancripter import Transcriber
 from utilties.document_genrater import document
