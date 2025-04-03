@@ -33,6 +33,7 @@ def mp3_file_deletion(mp3_file):
     try:
         if os.path.exists(mp3_file):
             os.remove(mp3_file)
+            os.close()
             print(f"file has been deleted successfully.")
         else:
             print(f"The file does not exist.")

@@ -11,15 +11,7 @@ from utilties.API import DocsGen
 from yt_dlp import YoutubeDL
 import yt_dlp
 import os
-from utilties.imageGenration import image_API
-def promt(text):
-# Regular expression pattern to find the placeholder and the text inside quotes
-    pattern = r'##promt##\s*"([^"]+)"'
 
-    # Replace all occurrences using a lambda function that calls image_API for each prompt
-    new_text = re.sub(pattern, lambda m: str(image_API.get_image(m.group(1))), text)
-
-    return new_text
 def sanitize_filename(filename):
     # Replace spaces and special characters
     sanitized = filename.replace(" ", "_").replace("|", "")
@@ -55,18 +47,3 @@ def download_audio(youtube_url, output_file):
             print(f"Error downloading audio: {e}")
             sys.exit()
     return output_file
-
-# Usage
-youtube_url = "https://youtu.be/t2_Q2BRzeEE?si=m_RnSKibDRpyzHqV"
-audio_file = get_video_title(youtube_url=youtube_url)
-audio_file_name = sanitize_filename(audio_file)
-# print(audio_file)
-audio_file = download_audio(youtube_url, audio_file_name)
-
-file = wav_converter(audio_file)
-file = os.path.realpath("vedio_data")+"\\"+file
-data = Transcriber(file)
-# print(data.transcript_data)
-transcri_data = DocsGen.docs(data.transcript_data)
-final_text = promt(transcri_data)
-document(final_text,audio_file_name)

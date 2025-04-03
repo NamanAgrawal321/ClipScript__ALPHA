@@ -5,7 +5,7 @@ import os
 
 class Transcriber:
     def __init__(self,audio_file):
-        self.model_path =  r"vosk-model-small-hi-0.22"
+        self.model_path =  r"vosk-model-small-en-us-0.15"
         self.model = None
         self.audio_file = audio_file
         self.file_path = self.audio_file
