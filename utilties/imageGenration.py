@@ -5,7 +5,7 @@ class image_API:
     def get_image(text):
 
         API_KEY = "our_Key"
-        CX = "039135c55604b4b19"
+        CX = "Your_Key"
         query = text
 
         # API Request
