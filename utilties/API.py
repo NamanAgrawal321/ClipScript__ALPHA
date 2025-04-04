@@ -4,7 +4,7 @@ class DocsGen:
     @staticmethod
     def docs(text):
         # Gemini API Key Configure करें
-        genai.configure(api_key="AIzaSyBcWpS-ff6_N1dr5f9hhQVapU93mRS10zw")  # अपनी API Key डालें
+        genai.configure(api_key="Your_Key")  # अपनी API Key डालें
 
         # मॉडल लोड करें
         model = genai.GenerativeModel("gemini-1.5-flash")
